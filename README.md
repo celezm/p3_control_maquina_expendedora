@@ -16,7 +16,7 @@
 
 A continuación se adjuntan un esquema fritzing y una foto del circuito real del sistema:
 
-[Esquema Fritzing](./media/pinout_maquina_expendedora.png)
+![Esquema Fritzing](./media/pinout_maquina_expendedora.png)
 
 ## Diseño carcasa
 
