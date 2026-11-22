@@ -22,7 +22,7 @@ El esquema en fritzing está en [fritzing/pinout_maquina_expendedora.fzz](fritzi
 
 Este es el circuito resultante:
 
- ![fritzing/pinout_maquina_expendedora.png](fritzing/pinout_maquina_expendedora.png)
+![fritzing/pinout_maquina_expendedora.png](fritzing/pinout_maquina_expendedora.png)
 
 | Pines del Arduino Uno | Componente | Conexión |
 | --- | --- | --- |
