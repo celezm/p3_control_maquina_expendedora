@@ -24,6 +24,19 @@ Este es el circuito resultante:
 
 ![fritzing/pinout_maquina_expendedora.png](fritzing/pinout_maquina_expendedora.png)
 
+### Montaje real
+
+![Vista frontal de la carcasa y los componentes](media/carcasa_frontal.jpg)
+
+*Vista frontal: LCD, sensor ultrasónico, DHT11, joystick, LED y botón.*
+
+![Vista superior del interior del montaje](media/interior_vista_superior.jpg)
+
+![Detalle del cableado de la protoboard](media/interior_protoboard.jpg)
+
+![Detalle del joystick instalado en la carcasa](media/joystick_detalle.jpg)
+
+
 | Pines del Arduino Uno | Componente | Conexión |
 | --- | --- | --- |
 | D2 | Botón | Entre D2 y GND, se configura como `INPUT_PULLUP`. |
