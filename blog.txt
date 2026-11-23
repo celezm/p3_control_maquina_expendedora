@@ -1,0 +1,2 @@
+Enlace al repositorio de github: https://github.com/celezm/p3_control_maquina_expendedora
+Enlace al blog: https://celezm.github.io/blog_setr_maquina_expendedora/
