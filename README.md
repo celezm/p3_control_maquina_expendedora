@@ -87,11 +87,11 @@ Estos avisos no interrumpen el código. Solo indican que hay un dato pendiente p
 
 Estas son las bibliotecas que se han utilizado en el sketch:
 
-- **LiquidCrystal** (`LiquidCrystal.h`): controla la pantalla LCD en modo de 4 bits. Viene incluida con el paquete de placas Arduino AVR, así que no hace falta instalarla aparte.
+- **LiquidCrystal** (`LiquidCrystal.h`): para controlar la pantalla LCD.
 - **ArduinoThread** (`Thread.h` y `ThreadController.h`): permite organizar el joystick, el DHT11, el sensor ultrasónico y los LED como tareas cooperativas.
 - **DHT sensor library**, de Adafruit (`DHT.h`): lee la temperatura y la humedad del DHT11.
-- **Adafruit Unified Sensor**: dependencia de la biblioteca DHT de Adafruit. Instálala también desde el gestor de bibliotecas si Arduino IDE la solicita.
-- **AVR Watchdog** (`avr/wdt.h`): configura el watchdog del ATmega328P del Arduino Uno. Forma parte del soporte AVR de Arduino y no requiere una instalación aparte.
+- **Adafruit Unified Sensor**: dependencia de la librería DHT de Adafruit. 
+- **AVR Watchdog** (`avr/wdt.h`): para la configuración del watchdog de la placa.
 
 El HC-SR04 no usa una biblioteca externa en este proyecto. `UltrasonicThread.h` controla sus pines y calcula la distancia con una máquina de estados.
 
