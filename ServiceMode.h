@@ -16,7 +16,7 @@ public:
     log_ms = millis() - 500UL;
     WriteLine(0, "ESPERANDO");
     WriteLine(1, "CLIENTE");
-    Serial.println(F("SERVICIO: ESPERANDO CLIENTE"));
+    // Serial.println(F("SERVICIO: ESPERANDO CLIENTE"));
   }
 
   void ReceiveDistance(unsigned int dist_cm) {
@@ -25,20 +25,20 @@ public:
       // Conservamos la pantalla de espera hasta que llegue la primera medida DHT.
       state = State::Monitoring;
       monitor_start = millis();
-      Serial.print(F("CLIENTE DETECTADO A "));
-      Serial.print(dist_cm);
-      Serial.println(F(" cm"));
+      // Serial.print(F("CLIENTE DETECTADO A "));
+      // Serial.print(dist_cm);
+      // Serial.println(F(" cm"));
       return;
     }
     const unsigned long now = millis();
     if ((unsigned long)(now - log_ms) >= 500UL) {
       log_ms = now;
       if (dist_cm == 0) {
-        Serial.println(F("ESPERANDO: SIN ECO"));
+        // Serial.println(F("ESPERANDO: SIN ECO"));
       } else {
-        Serial.print(F("ESPERANDO: "));
-        Serial.print(dist_cm);
-        Serial.println(F(" cm"));
+        // Serial.print(F("ESPERANDO: "));
+        // Serial.print(dist_cm);
+        // Serial.println(F(" cm"));
       }
     }
   }
@@ -51,7 +51,7 @@ public:
         state = State::Catalog;
         menu.Reset();
         menu.Draw();
-        Serial.println(F("SERVICIO: CATALOGO"));
+        // Serial.println(F("SERVICIO: CATALOGO"));
       }
     } else if (state == State::Preparing) {
       const unsigned long elapsed = now - prep_start;
@@ -61,7 +61,7 @@ public:
         pickup_start = now;
         WriteLine(0, "RETIRE BEBIDA");
         WriteLine(1, "");
-        Serial.println(F("SERVICIO: RETIRE BEBIDA"));
+        // Serial.println(F("SERVICIO: RETIRE BEBIDA"));
       }
     } else if (state == State::Pickup &&
                (unsigned long)(now - pickup_start) >= PickupDurationMs) {
@@ -74,7 +74,7 @@ public:
     if (isnan(hum) || isnan(temp)) {
       WriteLine(0, "DHT ERROR");
       WriteLine(1, "Revisar DATA D4");
-      Serial.println(F("DHT11: error de lectura"));
+      // Serial.println(F("DHT11: error de lectura"));
     } else {
       WriteLine(0, "Temp:");
       lcd.setCursor(6, 0);
@@ -84,11 +84,11 @@ public:
       lcd.setCursor(5, 1);
       lcd.print(hum, 1);
       lcd.print(F(" %"));
-      Serial.print(F("DHT11 Temp: "));
-      Serial.print(temp, 1);
-      Serial.print(F(" C Hum: "));
-      Serial.print(hum, 1);
-      Serial.println(F(" %"));
+      // Serial.print(F("DHT11 Temp: "));
+      // Serial.print(temp, 1);
+      // Serial.print(F(" C Hum: "));
+      // Serial.print(hum, 1);
+      // Serial.println(F(" %"));
     }
   }
 
@@ -112,13 +112,13 @@ public:
     led.StartProportional(prep_ms);
     WriteLine(0, "Preparando Cafe");
     WriteLine(1, "...");
-    Serial.print(F("SELECCIONADO: "));
-    Serial.print(menu.SelectedName());
-    Serial.print(F(" "));
-    Serial.print(menu.SelectedPrice());
-    Serial.print(F(" centimos; preparacion "));
-    Serial.print(prep_ms);
-    Serial.println(F(" ms"));
+    // Serial.print(F("SELECCIONADO: "));
+    // Serial.print(menu.SelectedName());
+    // Serial.print(F(" "));
+    // Serial.print(menu.SelectedPrice());
+    // Serial.print(F(" centimos; preparacion "));
+    // Serial.print(prep_ms);
+    // Serial.println(F(" ms"));
   }
   void Draw() {
     if (InCatalog()) menu.Draw();

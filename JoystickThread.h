@@ -76,13 +76,23 @@ private:
     // Guarda el evento si no había ya alguno pendiente
     if (pending != Event::None) return;
     pending = event;
-    Serial.print(F("JOY "));
+    // Serial.print(F("JOY "));
     switch (event) {
-      case Event::Up: Serial.println(F("ARRIBA")); break;
-      case Event::Down: Serial.println(F("ABAJO")); break;
-      case Event::Left: Serial.println(F("IZQUIERDA")); break;
-      case Event::Right: Serial.println(F("DERECHA")); break;
-      case Event::Press: Serial.println(F("PULSAR")); break;
+      case Event::Up:
+        // Serial.println(F("ARRIBA"));
+        break;
+      case Event::Down:
+        // Serial.println(F("ABAJO"));
+        break;
+      case Event::Left:
+        // Serial.println(F("IZQUIERDA"));
+        break;
+      case Event::Right:
+        // Serial.println(F("DERECHA"));
+        break;
+      case Event::Press:
+        // Serial.println(F("PULSAR"));
+        break;
       case Event::None: break;
     } 
   }

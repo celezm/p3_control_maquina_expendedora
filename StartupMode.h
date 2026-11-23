@@ -13,7 +13,7 @@ public:
     led.StartBlink(3, BlinkIntervalMs);
     WriteLine(0, "CARGANDO...");
     WriteLine(1, "");
-    Serial.println(F("MODO ARRANQUE"));
+    // Serial.println(F("MODO ARRANQUE"));
   }
 
   // loop() cambia a Servicio cuando la tarea LED informa que terminó.

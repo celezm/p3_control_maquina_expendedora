@@ -37,8 +37,8 @@ public:
         dirty = true;
 
       } else if (event == Event::Press) {
-        Serial.print(F("ADMIN: "));
-        Serial.println(opts[opt_idx]);
+        // Serial.print(F("ADMIN: "));
+        // Serial.println(opts[opt_idx]);
 
         if (opt_idx == 0) {
           view = View::Temperature;
@@ -100,13 +100,13 @@ public:
       } else if (event == Event::Press) {
         // El cambio se copia al catálogo solo al confirmar con SW.
         catalog.SetPriceCents(prod_idx, edit_cts);
-        Serial.print(F("ADMIN PRECIO: "));
-        Serial.print(catalog.Get(prod_idx).name);
-        Serial.print(F(" = "));
-        Serial.print(edit_cts / 100);
-        Serial.write('.');
-        if (edit_cts % 100 < 10) Serial.write('0');
-        Serial.println(edit_cts % 100);
+        // Serial.print(F("ADMIN PRECIO: "));
+        // Serial.print(catalog.Get(prod_idx).name);
+        // Serial.print(F(" = "));
+        // Serial.print(edit_cts / 100);
+        // Serial.write('.');
+        // if (edit_cts % 100 < 10) Serial.write('0');
+        // Serial.println(edit_cts % 100);
         view = View::PriceList;
         dirty = true;
       }

@@ -29,13 +29,13 @@ public:
       if (stable_btn) {
         press_ms = now;
         long_done = false;
-        Serial.println(F("BOTON EXTERNO: pulsado"));
+        // Serial.println(F("BOTON EXTERNO: pulsado"));
 
       } else {
         const unsigned long duration = now - press_ms;
-        Serial.print(F("BOTON EXTERNO: liberado tras "));
-        Serial.print(duration);
-        Serial.println(F(" ms"));
+        // Serial.print(F("BOTON EXTERNO: liberado tras "));
+        // Serial.print(duration);
+        // Serial.println(F(" ms"));
 
         if (!long_done && duration >= AdminHoldMs) {
           long_done = true;
@@ -48,7 +48,7 @@ public:
           return ButtonAction::Reset;
         }
 
-        if (!long_done) Serial.println(F("BOTON EXTERNO: sin accion"));
+        // if (!long_done) Serial.println(F("BOTON EXTERNO: sin accion"));
         
       }
     }

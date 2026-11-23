@@ -82,13 +82,13 @@ void EnterAdmin() {
   dht_sensor.enabled = false;
   admin.Enter();
   admin.Draw(millis());
-  Serial.println(F("BOTON EXTERNO: ENTRAR ADMIN"));
+  // Serial.println(F("BOTON EXTERNO: ENTRAR ADMIN"));
 }
 
 void setup() {
   MCUSR = 0;
   wdt_disable();
-  Serial.begin(115200);
+  // Serial.begin(115200);
 
   led1.Begin();
   led2.Begin();
@@ -142,7 +142,7 @@ void loop() {
 
   if (action == ButtonAction::ToggleAdmin) {
     if (mode == Mode::Admin) {
-      Serial.println(F("BOTON EXTERNO: SALIR ADMIN"));
+      // Serial.println(F("BOTON EXTERNO: SALIR ADMIN"));
       EnterService();
     } else {
       EnterAdmin();
@@ -150,7 +150,7 @@ void loop() {
 
   } else if (action == ButtonAction::Reset) {
     if (mode == Mode::Service) {
-      Serial.println(F("BOTON EXTERNO: RESET SERVICIO"));
+      // Serial.println(F("BOTON EXTERNO: RESET SERVICIO"));
       EnterService();
     }
   }
