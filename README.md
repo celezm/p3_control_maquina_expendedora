@@ -71,6 +71,12 @@ El fichero `.ino` configura el hardware, crea los objetos y coordina los modos d
 
 `UltrasonicThread` guarda marcas de tiempo con `micros()` y en cada llamada a `run()` comprueba si toca avanzar al siguiente paso: iniciar el pulso TRIG, detectar el eco o finalizar la medición.
 
+## Configuración del watchdog
+
+Al principio de `setup()`, `MCUSR = 0` borra las banderas que indican la causa del reinicio anterior, como un encendido, el botón RESET o el watchdog. Después, `wdt_disable()` mantiene desactivado el watchdog mientras se inicializa el hardware. Una vez terminada la inicialización, `wdt_enable(WDTO_2S)` lo activa con un plazo de dos segundos.
+
+Al comienzo de cada vuelta de `loop()`, `wdt_reset()` reinicia ese plazo para indicar que el programa sigue avanzando. Si el código se bloquea y deja de ejecutar `wdt_reset()` durante dos segundos, el watchdog reinicia la placa. No detecta errores lógicos si el programa continúa ejecutando `loop()`.
+
 ## Interrupciones y avisos entre tareas:
 
 El botón externo de D2 usa una interrupción de hardware configurada para detectar cambios al pulsarlo y soltarlo. `ExternalButtonIsr()` solo activa la flag `btn_changed`. Después, `loop()` procesa el antirrebote, la duración y la acción mediante `Button::Update()`.
